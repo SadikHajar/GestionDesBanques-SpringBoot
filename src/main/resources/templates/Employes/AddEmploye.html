@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="ISO-8859-1">
+	<title>Clients</title>
+	<link th:rel="stylesheet" th:href="@{/webjars/bootstrap/4.0.0-2/css/bootstrap.min.css} "/>
+</head>
+<body >
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+	<div class="container-fluid">
+		<!-- Toggle button -->
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+
+
+		<a class="navbar-brand"  th:href="@{/}">
+			<img src="https://e7.pngegg.com/pngimages/54/277/png-clipart-graphics-computer-icons-illustration-bank-text-logo.png" height="25" alt="MDB Logo" loading="lazy"/>
+		</a>
+
+
+	</div>
+</nav>
+
+<!-- Sidebar -->
+<div class="container-fluid">
+	<div class="row">
+		<nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar">
+			<div class="sidebar-sticky">
+				<ul class="nav flex-column">
+					<li class="nav-item active">
+						<a class="nav-link" style=" font-size:20px" th:href="@{/}">Accueil</a>
+					</li>
+					<br>
+					<br>
+					<br>
+					<li class="nav-item">
+						<a class="nav-link " style=" font-size:20px" href="#" role="button" th:href="@{/MenuEmploye}">Employe</a>
+
+					</li>
+
+
+					<br>
+					<br>
+
+					<li class="nav-item ">
+						<a class="nav-link " style=" font-size:20px" href="#" role="button"  th:href="@{/MenuClients}" >Client</a>
+
+					</li>
+					<br>
+					<br>
+
+
+					<li class="nav-item ">
+						<a class="nav-link" style=" font-size:20px" href="#"  role="button" th:href="@{/MenuComptes}" >Compte</a>
+
+					</li>
+
+
+					<br>
+
+					<br>
+					<li class="nav-item ">
+						<a class="nav-link " style=" font-size:20px" href="#" role="button" th:href="@{/MenuGroupe}" >Groupe</a>
+
+					</li>
+
+					<br>
+
+					<br>
+					<li class="nav-item ">
+						<a class="nav-link" style=" font-size:20px" href="#"  role="button" th:href="@{/MenuOperations}" >Operation</a>
+
+					</li>
+
+
+
+					<br>
+
+					<br>
+
+					<li>					<br>
+						<br>
+						<br>
+						<br>
+					</li>
+					<li>
+						<br>
+						<br>
+					</li>
+
+				</ul>
+			</div>
+		</nav>
+
+		<!-- Main content -->
+		<main class="col-md-9 ms-sm-auto col-lg-10 px-md-4" style="margin-top: 58px;">
+			<div class="container pt-4">
+		
+
+
+</br>
+
+<div class="container">
+
+		<form  th:action="@{/saveEmploye}" th:object="${employe}" method="POST">
+		<h1>Ajouter un employe</h1>
+		 <br>
+		  <div class="form-group">
+		    <label style="font-size:20px">Nom Employe </label>
+		    <input type="text" class="form-control"  placeholder="Entrer le Nom" th:field="*{nomEmploye}">
+		  </div>
+		  <div class="form-group">
+		  <label style="font-size:20px">Nom Employe Sup</label>
+		   <select  th:field="*{employeSup}" class="form-control">
+                         <option value=""> -- </option>
+                         <option th:each="employe : ${AllEmployes}"
+                            th:value="${employe.codeEmploye}"
+                            th:utext="${employe.nomEmploye}"/>
+                  </select  >
+		  </div>
+
+              <div>
+                  <div class="form-group">
+                      <label style="font-size:20px">Groupe</label>
+                      <select  th:field="*{groupes}" class="form-control">
+                          <option value=""> -- </option>
+                          <option th:each="groupe : ${allgroupes}"
+                                  th:value="${groupe.codeGroupe}"
+                                  th:utext="${groupe.nomGroupe}"/>
+                      </select  >
+				  </div>
+					  <!--
+                          <select th:field="*{selectedGroup}" class="form-control" style="font-size: 15px;">
+                              <option th:each="groupe : ${allgroupes}"
+                                  th:value="${groupe.codeGroupe}"
+                                  th:text="${groupe.nomGroupe}">
+                                  </option>
+                          </select>
+
+
+
+
+                          <dl style="font-size:15px">
+            <dt th:each="groupe : ${allgroupes}">
+              <input type="checkbox" th:field="*{groupes}" th:text="${groupe.nomGroupe}" th:value="${groupe.codeGroupe}" />
+            </dt>
+        </dl >
+
+                      -->
+
+
+<br>
+              <button type="submit" class="btn btn-success"  style="font-size:20px">Ajouter Employe</button>
+            </br></br></br></br></br>
+            </form >
+
+
+
+
+              </div>
+
+
+
+
+
+
+			</div>
+		</main>
+	</div>
+</div>
+        <script th:src="@{/webjars/jquery/3.0.0/jquery.min.js}"></script>
+            <script th:src="@{/webjars/popper.js/1.12.9-1/umd/popper.min.js}"></script>
+            <script th:src="@{/webjars/bootstrap/4.0.0-2/js/bootstrap.min.js}"></script>
+    </body >
+    </html>

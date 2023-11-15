@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <head>
+        <meta charset="UTF-8" />
+        <title>Menu Employes</title>
+        <link rel="stylesheet" type="css" th:href="@{/static/css/style.css}"/>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    </head>
+</head>
+<body>
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+    <div class="container-fluid">
+        <!-- Toggle button -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+
+        <a class="navbar-brand"  th:href="@{/}">
+            <img src="https://e7.pngegg.com/pngimages/54/277/png-clipart-graphics-computer-icons-illustration-bank-text-logo.png" height="25" alt="MDB Logo" loading="lazy"/>
+        </a>
+
+
+    </div>
+</nav>
+
+<!-- Sidebar -->
+<div class="container-fluid">
+    <div class="row">
+        <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar">
+            <div class="sidebar-sticky">
+                <ul class="nav flex-column">
+                    <br>
+                    <br>
+                    <br>
+                    <li class="nav-item">
+                        <a class="nav-link " style=" font-size:20px" href="#" role="button" th:href="@{/}">Accueil</a>
+
+                    </li>
+                    <br>
+                    <br>
+                    <br>
+                    <li class="nav-item">
+                        <a class="nav-link " style=" font-size:20px" href="#" role="button" th:href="@{/MenuEmploye}">Employe</a>
+
+                    </li>
+
+
+                    <br>
+                    <br>
+
+                    <li class="nav-item ">
+                        <a class="nav-link " style=" font-size:20px" href="#" role="button"  th:href="@{/MenuClients}" >Client</a>
+
+                    </li>
+                    <br>
+                    <br>
+
+
+                    <li class="nav-item ">
+                        <a class="nav-link" style=" font-size:20px" href="#"  role="button" th:href="@{/MenuComptes}" >Compte</a>
+
+                    </li>
+
+
+                    <br>
+
+                    <br>
+                    <li class="nav-item ">
+                        <a class="nav-link " style=" font-size:20px" href="#" role="button" th:href="@{/MenuGroupe}" >Groupe</a>
+
+                    </li>
+
+                    <br>
+
+                    <br>
+                    <li class="nav-item ">
+                        <a class="nav-link" style=" font-size:20px" href="#"  role="button" th:href="@{/MenuOperations}" >Operation</a>
+
+                    </li>
+
+
+
+                    <br>
+
+                    <br>
+
+                    <li>					<br>
+                        <br>
+                        <br>
+                        <br>
+                    </li>
+                    <li>
+                        <br>
+                        <br>
+                    </li>
+
+                </ul>
+            </div>
+        </nav>
+
+        <!-- Main content -->
+        <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4" style="margin-top: 58px;">
+            <div class="container pt-4">
+ <div class="container h-100">
+    <div class="row h-100 justify-content-center align-items-center">
+        <div class="col">
+            <br><br>
+            <h1 class="text-center">Employes</h1>
+            <br><br><br><br>
+            <br><br>
+
+            <div class="row">
+                <div class="col-sm-6 mb-3 mb-sm-0">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Liste des Employes</h5>
+                            <div class="col   ">
+
+                            <p class="card-text" >Explorez et visualisez la liste des Employes existants.</p>
+                            <a class="btn btn-primary" th:href="@{/employes}">Voir</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Ajouter un employe</h5>
+                            <div class="col  " >
+
+                            <p class="card-text">Ajoutez un nouveau employe au système.</p>
+                            <a class="btn btn-primary" th:href="@{/showAddEmployeForm}">Ajouter</a>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+            </div>
+        </main>
+    </div>
+</div>
+</body>
+</html>
